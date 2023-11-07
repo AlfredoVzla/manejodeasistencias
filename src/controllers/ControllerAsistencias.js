@@ -9,7 +9,7 @@ class ContollerAsistencia {
             const asistenciasProcesadas = await ContollerAsistencia.procesarArchivoCSV(req.file.path);
            
             const archivoCargado = await asistenciasDAO.cargar(asistenciasProcesadas);
-            res.status(201).json(archivoCargado);
+            //res.status(201).json(archivoCargado);
         } catch (err) {
             res.status(500).json({ error: 'No se pudo cargar o procesar el archivo' });
         }
