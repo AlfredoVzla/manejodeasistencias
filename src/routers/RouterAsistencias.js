@@ -9,8 +9,12 @@ router.post('/nueva', upload.single('csvFile'), (req, res, next) => {
     // Aplicar el middleware antes de llamar al controlador
     validarCSV(req, res, next);
 
-    // Luego, llama al controlador para procesar el archivo
-    controllerAsistencia.cargarAsistencia(req, res, next);
+    controllerAsistencia.cargarAsistencia(req, res, (err) => {
+        if (err) {
+            res.status(400).json({ error: 'Error al cargar asistencia' });
+        }
+    });
 });
+
 
 module.exports = router;
