@@ -1,3 +1,4 @@
+const { match } = require('assert');
 const Asistencia = require('../models/Asistencia')
 
 class AsistenciaDAO {
@@ -13,9 +14,38 @@ class AsistenciaDAO {
         }
     }
 
-    static async consultarPorGrupo(nombreGrupo){
+    static async consultarPorGrupo(nombreGrupo, fechaDesde, fechaHasta){
         try{
-            const consulta= await Asistencia.findOne({grupo: nombreGrupo});
+            const consulta= await Asistencia.aggregate([
+                {
+                    $match: {
+                        grupo: nombreGrupo
+                    }
+                },
+                {
+                    $unwind: "$fechas"
+                },
+                {
+                    $match: {
+                        "fechas.fecha": {
+                            $gte: new Date(fechaDesde),
+                            $lte: new Date(fechaHasta)
+                        }
+                    }
+                },
+                {
+                    $group: {
+                        _id:"$_id",
+                        grupo: { $first: "$grupo" },
+                        fechas: { $push: "$fechas" }
+                    }
+                },
+                {
+                    $project: {
+                        _id: 0,
+                    }
+                }
+            ])
             console.log(consulta)
             return consulta
         } catch (err) {
@@ -40,20 +70,14 @@ class AsistenciaDAO {
                 },
                 {
                     $match: {
-                        "fechas.asistencias.nombreEstudiante": alumno,
-                        "fechas.asistencias.asistio":true
-                    }
-                },
-                {
-                    $group: {
-                        _id: null,
-                        fechas: { $addToSet: "$fechas.fecha" }
+                        "fechas.asistencias.nombreEstudiante": alumno
                     }
                 },
                 {
                     $project: {
                         _id: 0,
-                        fechas:  1
+                        fecha: "$fechas.fecha",
+                        asistio: "$fechas.asistencias.asistio"
                     }
                 }
             ])

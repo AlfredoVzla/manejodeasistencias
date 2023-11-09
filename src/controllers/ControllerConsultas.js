@@ -15,7 +15,7 @@ class ControllerConsulta {
 
     static async asistenciasGrupo(req, res) {
         try{
-            const consulta= await asistenciasDAO.consultarPorGrupo(req.body.grupo)
+            const consulta= await asistenciasDAO.consultarPorGrupo(req.body.grupo, req.body.desde, req.body.hasta)
             res.status(201).json(consulta);
         } catch (err) {
             console.error(err)
