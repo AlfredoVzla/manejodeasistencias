@@ -120,7 +120,7 @@ body {
     padding: 8px;
     box-sizing: border-box;
     border: none;
-    border-bottom: 1px solid #ccc; /* Agrega un borde inferior al cuadro de texto y al cuadro de selección */
+    border-bottom: 1px solid #ccc;
     outline: none;
 }
 
@@ -132,11 +132,11 @@ body {
 }
 
 .filter-input .custom-button {
-    width: 80px; /* Ajusta el ancho según tus necesidades */
-    padding: 5px; /* Ajusta el espacio interno para hacerlo más pequeño */
+    width: 80px;
+    padding: 5px;
     box-sizing: border-box;
-    margin-top: 5px; /* Agrega un margen superior para separar el botón del select */
-    background-color: blue;
+    margin-top: 5px;
+    background-color: #3D63EA;
     border: 1px solid #ccc;
     border-radius: 0 0 5px 5px;
     color: white;
