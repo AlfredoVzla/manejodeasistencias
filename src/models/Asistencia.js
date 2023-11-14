@@ -2,13 +2,9 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const asistenciaSchema = new Schema ({
+const asistenciaAlumnoSchema = new Schema ({
     nombreEstudiante: {
         type: String,
-        required: true
-    },
-    fechaClase: {
-        type: Date,
         required: true
     },
     asistio: {
@@ -30,7 +26,29 @@ const asistenciaSchema = new Schema ({
         }
 
     }
-})
+}, {versionKey:false})
+
+const fechaSchema= new Schema({
+    fecha: {
+        type: Date,
+        required: true
+    },
+    asistencias: {
+        type: [asistenciaAlumnoSchema],
+        required: true
+    }
+}, {versionKey:false})
+
+const asistenciaSchema= new Schema({
+    grupo: {
+        type: String,
+        required: true
+    },
+    fechas: {
+        type: [fechaSchema],
+        required: true
+    }
+}, {versionKey:false})
 
 const Asistencia = mongoose.model('Asistencia', asistenciaSchema);
 
