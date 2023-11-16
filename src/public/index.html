@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Aplicación de carga de archivos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="title">Sube tus Archivos de Asistencia</h1>
+        <p class="subtitle">Selecciona los archivos de asistencia que deseas subir.</p>
+        <div id="dropArea" class="drop-area">
+            <input type="file" id="fileInput" style="display: none">
+            <button id="browseButton" class="browse-button">O selecciona un archivo</button>
+            <div class="drop-text">📁 Arrastra y suelta archivos aquí</div>
+        </div>
+        <button id="uploadButton" class="upload-button">Subir</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
