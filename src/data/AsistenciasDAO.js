@@ -1,5 +1,5 @@
 const { match } = require('assert');
-const Asistencia = require('../models/AsistenciaAlumnoSchema')
+const Asistencia = require('../models/Asistencia')
 
 class AsistenciaDAO {
 
