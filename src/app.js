@@ -2,6 +2,7 @@ const express = require ('express');
 const app = express();
 const routerAsistencias = require('./routers/RouterAsistencias');
 const routerConsultas = require('./routers/RouterConsultas');
+
 require('dotenv').config();
 const PORT = process.env.PORT;
 const routerCursos=require('./routers/RouterCursos');
