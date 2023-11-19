@@ -2,9 +2,11 @@ const fs = require('fs');
 
 function validarCSV(req, res, next) {
     const file = req.file;
+    console.log('Tipo MIME del archivo:', file.mimetype);
 
-    // Validar que el archivo sea un archivo .csv
-    if (file.mimetype !== 'text/csv') {
+    const allowedMimeTypes = ['text/csv', 'application/vnd.ms-excel'];
+
+    if (!allowedMimeTypes.includes(file.mimetype)) {
         return res.status(400).json({ error: 'El archivo no es un archivo .csv' });
     }
 
@@ -16,10 +18,9 @@ function validarCSV(req, res, next) {
     const expectedHeader = 'Names,2020-09-10 11:29,Arrival time';
     if (lines[2].trim() !== expectedHeader) {
         return res.status(400).json({ error: 'El archivo no tiene el formato correcto' });
-    }else{
-        next();
-        return res.status(200).json({ Exito: 'Formato cargado correctamente' });
     }
+
+    next();
 }
 
 module.exports = { validarCSV };
