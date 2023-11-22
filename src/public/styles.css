@@ -70,3 +70,95 @@ body {
     font-size: 20px;
     margin-bottom: 40px;
 }
+
+input[type=text], select {
+    width: 45%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+}
+
+/*Estilos visualizar*/
+
+.cargar {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.file-container {
+    display: flex;
+    width: 90%;
+    height: 600px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.file-sidebar {
+    width: 20%;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
+.file-sidebar h2 {
+    margin-bottom: 10px;
+}
+
+.filter-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.filter-input {
+    display: flex;
+    gap: 5px;
+}
+
+.filter-input input {
+    width: 65%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+}
+
+.filter-input select {
+    width: 35%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: none;
+}
+
+.filter-input .custom-button {
+    width: 80px;
+    padding: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    background-color: #3D63EA;
+    border: 1px solid #ccc;
+    border-radius: 0 0 5px 5px;
+    color: white;
+}
+
+
+.file-display {
+    width: 80%;
+    padding: 20px;
+}
+
+.file-sidebar li.filtered {
+    background-color: #f0f8ff;
+}

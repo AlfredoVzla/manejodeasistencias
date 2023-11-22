@@ -1,5 +1,6 @@
 const asistenciasDAO = require('../data/AsistenciasDAO')
 require('../data/database');
+const HttpStatusCodes= require('../enums/HttpStatusCodes')
 const csvtojson = require('csvtojson')
 
 class ContollerAsistencia {
@@ -10,9 +11,14 @@ class ContollerAsistencia {
         const asistenciasProcesadas = await ContollerAsistencia.procesarArchivoCSV(filePath, grupo);
   
         const archivoCargado = await asistenciasDAO.cargar(asistenciasProcesadas);
-        res.status(201).json(archivoCargado);
+        if (!res.headersSent) {
+        res.status(HttpStatusCodes.CREATED).json(archivoCargado);
+        }
       } catch (err) {
-        res.status(500).json({ error: 'No se pudo cargar o procesar el archivo' });
+        console.error(err);
+        if (!res.headersSent) {
+            return res.status(HttpStatusCodes.INTERNAL_SERVER_ERROR).json({ error: 'No se pudo cargar o procesar el archivo' });
+        }
       }
     }
   
