@@ -4,6 +4,31 @@
     <meta charset="UTF-8">
     <title>Visor de Archivos de Asistencia</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var filterInput = document.querySelector('.filter-input');
+            var filterTypeSelect = document.getElementById('filterType');
+
+            function toggleDateFields() {
+                var dateFields = document.querySelectorAll('.date-fields');
+                var groupFields = document.querySelectorAll('.group-fields');
+
+                groupFields.forEach(function(field){
+                    field.style.display = (filterTypeSelect.value === 'student') ? 'block': 'none';
+                });
+
+                dateFields.forEach(function (field) {
+                    field.style.display = (filterTypeSelect.value === 'group') ? 'block' : 'none';
+                });
+            }
+            filterTypeSelect.addEventListener('change', function () {
+                toggleDateFields();
+            });
+
+            toggleDateFields();
+        });
+    </script>
 </head>
 <body class="cargar">
     <div class="file-container">
@@ -20,6 +45,15 @@
                         <option value="student">Alumno</option>
                     </select>
                 </div>
+                <div class="filter-input date-fields">
+                    <input type="date" id="fechaDesde" placeholder="Fecha Desde">
+                </div>
+                <div class="filter-input date-fields">
+                    <input type="date" id="fechaHasta" placeholder="Fecha Hasta">
+                </div>
+                <div class="filter-input group-fields">
+                    <input type="text" id="groupSearch" placeholder="Grupo">
+                </div>
                 <div class="filter-input">
                     <button id="searchButton" class="custom-button">Buscar</button>
                 </div>
@@ -29,7 +63,10 @@
         <div class="file-display">
             <h1>Visor de Archivos de Asistencia</h1>
             <div id="fileContent"></div>
-        </div>
+            <div id="paginationControls"></div>
+        </div>        
     </div>
+
+    <script src="visualizar.js"></script>
 </body>
 </html>
