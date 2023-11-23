@@ -1,4 +1,5 @@
 const fs = require('fs');
+const HttpStatusCodes = require('../enums/HttpStatusCodes');
 
 function validarCSV(req, res, next) {
     const file = req.file;
@@ -7,24 +8,24 @@ function validarCSV(req, res, next) {
     const allowedMimeTypes = ['text/csv', 'application/vnd.ms-excel'];
 
     if (!allowedMimeTypes.includes(file.mimetype)) {
-        return res.status(400).json({ error: 'El archivo no es un archivo .csv' });
+        return res.status(HttpStatusCodes.BAD_REQUEST).json({ error: 'El archivo no es un archivo .csv' });
     }
 
     fs.readFile(file.path, 'utf8', (err, fileContent) => {
         if (err) {
-            return res.status(500).json({ error: 'Error al leer el archivo' });
+            return res.status(HttpStatusCodes.INTERNAL_SERVER_ERROR).json({ error: 'Error al leer el archivo' });
         }
 
         const lines = fileContent.split('\n');
 
         if (!lines[0].startsWith('Attendance for:')) {
-            return res.status(400).json({ error: 'El archivo no tiene el formato correcto' });
+            return res.status(HttpStatusCodes.BAD_REQUEST).json({ error: 'El archivo no tiene el formato correcto' });
         }
 
         const fileColumns = lines[2].trim().split(',');
 
         if (fileColumns.length < 3) {
-            return res.status(400).json({ error: 'El archivo no tiene el formato correcto' });
+            return res.status(HttpStatusCodes.BAD_REQUEST).json({ error: 'El archivo no tiene el formato correcto' });
         }
         next();
     });
