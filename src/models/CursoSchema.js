@@ -7,6 +7,10 @@ const cursoSchema = new Schema({
         type: String,
         required:true
     }, 
+    clave:{
+        type: String,
+        required:true
+    }, 
     instructor:{
         type: String,
         required:true

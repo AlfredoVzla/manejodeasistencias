@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Visor de Archivos de Asistencia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="cargar">
+    <div class="file-container">
+        <div class="file-sidebar">
+            <h2>Archivos de Asistencia:</h2>
+            <div class="filter-controls">
+                <div class="filter-input">
+                    <input type="text" id="globalFilter" placeholder="Buscar..." class="input-carga">
+                    <select id="filterType">
+                        <option value="fileName">Archivo</option>
+                        <option value="group">Grupo</option>
+                        <option value="course">Curso</option>
+                        <option value="unit">Unidad</option>
+                        <option value="student">Alumno</option>
+                    </select>
+                </div>
+                <div class="filter-input">
+                    <button id="searchButton" class="custom-button">Buscar</button>
+                </div>
+            </div>
+            <ul id="fileList"></ul>
+        </div>
+        <div class="file-display">
+            <h1>Visor de Archivos de Asistencia</h1>
+            <div id="fileContent"></div>
+        </div>
+    </div>
+</body>
+</html>
