@@ -24,7 +24,7 @@ body {
     align-items: center;
     text-align: center;
     cursor: pointer;
-    margin-top: 60px;
+    margin-top: 40px;
     margin-bottom: 10px;
 }
 
@@ -71,7 +71,7 @@ body {
     margin-bottom: 40px;
 }
 
-input[type=text], select {
+select{
     width: 45%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -79,7 +79,26 @@ input[type=text], select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+}
 
+input[type=text]{
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.input-carga{
+    width: 45%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display:inline-block;
+}
+
+.input-curso{
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 30px;
+    font-size: 16px;
 }
 
 /*Estilos visualizar*/
@@ -153,7 +172,6 @@ input[type=text], select {
     color: white;
 }
 
-
 .file-display {
     width: 80%;
     padding: 20px;
@@ -161,4 +179,50 @@ input[type=text], select {
 
 .file-sidebar li.filtered {
     background-color: #f0f8ff;
+}
+
+/*Estilos agregar curso*/
+
+form {
+    max-width: 800px;
+    margin: auto;
+}
+
+.curso-area {
+    max-width: 700px;
+    margin: auto;
+    position: relative;
+    margin-top: 110px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    margin-top: 15px;
+    font-size: 18px;
+    width: 100%;
+}
+
+.tittle-curso{
+    font-size: 35px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    
+}
+
+.curso-button{
+    position: absolute;
+    bottom: -55px;
+    right: 5px;
+    padding: 10px 30px;
+    font-size: 16px;
+    background-color: #3D63EA;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
