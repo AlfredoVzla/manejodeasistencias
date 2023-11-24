@@ -1,3 +1,4 @@
+import * as config from "./config.js";
 document.addEventListener('DOMContentLoaded', function () {
 
     const filterInput = document.querySelector('.filter-input');
@@ -8,8 +9,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const fechaHastaInput = document.getElementById('fechaHasta');
     const fileContent = document.getElementById('fileContent'); 
 
-    const serverURL = "http://localhost:8721/consultas/grupo";
-    const serverURLAlumno = "http://localhost:8721/consultas/alumno";
+    const serverURL = config.serverURL;
+    const serverURLAlumno = config.serverURLAlumno;
 
     function formatearFecha(fechaConFormatoDDMMYYYY) {
         const fechaObj = new Date(fechaConFormatoDDMMYYYY);
