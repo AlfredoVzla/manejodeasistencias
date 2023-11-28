@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Formulario de Unidad</title>
+</head>
+<body>
+    <div class="curso-area curso-area-nuevo">
+        <div class="tittle-curso">Agregar Unidad</div>
+        <form id="unit-form">
+            <label for="unit-key">Clave de la Unidad:</label>
+            <input type="text" id="unit-key" name="unit-key" class="input-curso" required>
+
+            <label for="unit-name">Nombre de la Unidad:</label>
+            <input type="text" id="unit-name" name="unit-name" class="input-curso" required>
+
+            <label for="unit-responsible">Responsable de la Unidad:</label>
+            <input type="text" id="unit-responsible" name="unit-responsible" class="input-curso" required>
+
+            <label for="unit-phone">Teléfono de la Unidad:</label>
+            <input type="text" id="unit-phone" name="unit-phone" class="input-curso" required>
+
+            <select id="course-list" name="course-list" multiple class="input-curso">
+                <!-- Opciones de cursos se consultarán desde la BD y se cargarán -->
+            </select>
+
+            <input type="submit" value="Agregar Unidad" class="curso-button">
+        </form>
+    </div>
+</body>
+</html>
