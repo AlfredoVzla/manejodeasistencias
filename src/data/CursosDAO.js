@@ -10,6 +10,16 @@ class CursoDAO {
             throw err;
         }
     }
+
+    static async buscarCurso(idCurso) {
+        try{
+            const resultado= await Curso.find({_id:idCurso});
+            return resultado;
+        }catch(err){
+            console.error(err);
+            throw err;
+        }
+    }
 }
 
 module.exports = CursoDAO;
