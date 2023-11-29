@@ -10,6 +10,16 @@ class UnidadDAO {
             throw err;
         }
     }
+
+    static async actualizar(unidad){
+        try{
+            var resultado= await Unidad.findOneAndUpdate({clave:unidad.clave}, unidad, {new:true, runValidators:true});
+            return resultado;
+        }catch(error) {
+            console.error(error);
+            throw error;
+        }
+    }
 }
 
 module.exports = UnidadDAO;
