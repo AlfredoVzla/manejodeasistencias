@@ -230,3 +230,64 @@ label {
     border-radius: 5px;
     cursor: pointer;
 }
+.file-display {
+    padding: 20px;
+}
+
+.fecha-container {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.fecha-container h2 {
+    margin-bottom: 10px;
+}
+
+.date-fields input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 8px;
+    box-sizing: border-box;
+}
+
+.asistencias-list li {
+    margin-bottom: 5px;
+}
+
+.asistencia-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.asistencia-item p {
+    margin: 0;
+}
+
+/* Estilos para la paginación */
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.page-item {
+    margin-right: 5px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.page-item:hover {
+    background-color: #eee;
+}
+
+.active {
+    background-color: #007BFF;
+    color: #fff;
+    border: 1px solid #007BFF;
+}
