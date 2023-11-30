@@ -24,6 +24,20 @@ class ControllerUnidad {
             res.status(HttpStatusCodes.INTERNAL_SERVER_ERROR).json({error: 'No se pudo actualizar la unidad'});
         }
     }
+
+    static async eliminarUnidad(req, res) {
+        try {
+            const clave = req.headers.clave;
+            const resultado = await UnidadDAO.eliminar(clave);
+            if (resultado) {
+                res.status(HttpStatusCodes.OK).json({ mensaje: 'Se ha eliminado correctamente', resultado });
+            } else {
+                res.status(HttpStatusCodes.NOT_FOUND).json({ resultado: 'No se ha encontrado la unidad que se deseaba eliminar' });
+            }
+        } catch (error) {
+            res.status(HttpStatusCodes.INTERNAL_SERVER_ERROR).json({ error: 'No se pudo eliminar la unidad' });
+        }
+    }
 }
 
 module.exports = ControllerUnidad;

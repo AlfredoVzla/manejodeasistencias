@@ -20,6 +20,17 @@ class UnidadDAO {
             throw error;
         }
     }
+
+    static async eliminar(clave) {
+        try {
+            var resultado = await Unidad.findOneAndDelete({ clave: clave });
+            return resultado;
+        } catch (error) {
+            console.error(error);
+            throw error;
+        }
+    }
+
 }
 
 module.exports = UnidadDAO;
