@@ -199,6 +199,10 @@ form {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+.curso-area-nuevo{
+    margin-top: 70px;
+}
+
 label {
     margin-top: 15px;
     font-size: 18px;
