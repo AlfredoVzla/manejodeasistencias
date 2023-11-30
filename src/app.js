@@ -7,6 +7,7 @@ require('dotenv').config();
 const PORT = process.env.PORT;
 const routerCursos=require('./routers/RouterCursos');
 const routerUnidad=require('./routers/RouterUnidad');
+const routerMaestro=require('./routers/RouterMaestros');
 
 
 
@@ -16,6 +17,7 @@ app.use('/asistencias', routerAsistencias);
 app.use('/consultas', routerConsultas);
 app.use('/cursos', routerCursos);
 app.use('/unidad', routerUnidad);
+app.use('/maestro',routerMaestro);
 
 app.listen(PORT, () => {
     console.log('Servidor de asistencias');
