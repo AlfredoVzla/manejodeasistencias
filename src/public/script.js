@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => {
                 if (data && data.error) {
                     console.error('Error adicional:', data.error);
+                    resetDropArea();
                     alert('Error al subir el archivo: ' + data.error);
                 }
             })
@@ -47,7 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error('Error al enviar el archivo y el grupo', error)
             });
         } else {
-            console.error('Selecciona un archivo y ingresa un grupo antes de intentar subirlo.');
+            alert('¡Selecciona un archivo e ingresa un grupo antes de intentar subirlo.!');
+            console.error('Selecciona un archivo e ingresa un grupo antes de intentar subirlo.');
         }
 
     });

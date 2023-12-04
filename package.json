@@ -12,9 +12,11 @@
   },
   "devDependencies": {
     "chai": "^4.3.10",
-    "mocha": "^10.2.0"
+    "mocha": "^10.2.0",
+    "sinon": "^17.0.1"
   },
   "scripts": {
-    "test": "mocha src/tests/controllerAsistencia.test.js"
+    "test": "mocha src/tests/controllerAsistencia.test.js",
+    "test-unidad": "mocha src/tests/controllerUnidad.test.js"
   }
 }
