@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Tabla de Cursos</title>
+</head>
+<body class="cargar">
+    <div class="table-container">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Buscar por nombre..." class="input-carga">
+            <button onclick="search()" class="custom-button">Buscar</button>
+        </div>
+        <table id="courseTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre del Curso</th>
+                    <th>Nombre del Instructor</th>
+                    <th>Clave del Curso</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Curso 1</td>
+                    <td>Instructor 1</td>
+                    <td>Clave 1</td>
+                    <td>
+                        <button onclick="editCourse(1)" class="custom-button">Editar</button>
+                        <button onclick="deleteCourse(1)" class="custom-button">Eliminar</button>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+    
+</body>
+</html>
