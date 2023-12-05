@@ -291,3 +291,54 @@ label {
     color: #fff;
     border: 1px solid #007BFF;
 }
+
+
+
+        /* Estilos para la tabla de cursos */
+        .table-container {
+            width: 80%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f5f5f5;
+        }
+
+        th:last-child, td:last-child {
+            text-align: center;
+        }
+
+        .search-container {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 8px 15px;
+            border-radius: 5px;
+            border: none;
+            background-color: #3D63EA;
+            color: white;
+            cursor: pointer;
+        }
