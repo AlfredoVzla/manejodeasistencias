@@ -11,6 +11,16 @@ class CursoDAO {
         }
     }
 
+    static async actualizar(curso){
+        try{
+            var resultado= await Curso.findOneAndUpdate({clave:curso.clave}, curso, {new:true, runValidators:true});
+            return resultado;
+        }catch(error) {
+            console.error(error);
+            throw error;
+        }
+    }
+
     static async buscarCurso(idCurso) {
         try{
             const resultado= await Curso.find({_id:idCurso});
